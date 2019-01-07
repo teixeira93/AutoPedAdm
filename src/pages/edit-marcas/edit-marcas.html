@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title style="text-align: center;">Nova Marca</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+    <form [formGroup]="form">
+        <ion-item>
+          <ion-label stacked> Marcas dos Produtos </ion-label>
+          <ion-input type="text" formControlName="nome"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!form.controls.nome.valid && (form.controls.nome.dirty || form.controls.nome.touched)" color="danger">
+          <div [hidden]="!form.controls.nome.errors.required">
+            O Campo é Obrigatório
+          </div>
+        </ion-item>
+
+
+        <div padding>
+            <button ion-button block color="dark" type="submit" (click)="onSubmit()" [disabled]="!form.valid" round>Salvar</button>
+          </div>
+    </form>
+</ion-content>

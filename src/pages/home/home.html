@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="text-align: center;">AutoPed</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="card-background-page" >
+    <h6 style="text-align: center;">Bem vindo, {{userName}}</h6>
+
+    <ion-list>
+        <ion-list-header style=" text-align: center; ">
+          Fique por dentro das melhores notícias.
+        </ion-list-header>
+      </ion-list>
+
+      <ion-card *ngFor="let home of homes | async">
+        <!-- <img src="../assets/imgs/rosto1.jpg"/> -->
+        <ion-card-content>
+
+           <img src="{{home.imgUrl}}" alt="">
+           <ion-card-title>
+            {{home.titulo}}
+           </ion-card-title>
+           <p>
+             {{home.descricao}}
+           </p>
+
+        </ion-card-content>
+        <button ion-button clear (click)="deletarHome(home.key)" >Excluir</button>
+      </ion-card>
+
+      <ion-fab right bottom>
+          <button ion-fab color="dark" (click)="newItemHome()"><ion-icon name="add"></ion-icon></button>
+      </ion-fab>
+
+</ion-content>

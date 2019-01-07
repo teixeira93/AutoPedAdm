@@ -1,0 +1,43 @@
+    <ion-header>
+      <ion-navbar color="danger">
+        <ion-title style="text-align: center;">Entrar</ion-title>
+      </ion-navbar>
+    </ion-header>
+
+
+<ion-content padding>
+<Form [formGroup]="form">
+
+  <ion-item>
+    <ion-label stacked>E-mail</ion-label>
+    <ion-input type="email" formControlName="email"></ion-input>
+  </ion-item>
+
+    <ion-item *ngIf="!form.controls.email.valid && (form.controls.email.dirty || form.controls.email.touched)" color="danger">
+      <div [hidden]="!form.controls.email.errors.required">
+      o campo é obrigatorio
+      </div>
+    </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Senha</ion-label>
+    <ion-input color="dark" type="password" formControlName="password"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="!form.controls.password.valid && (form.controls.password.dirty || form.controls.password.touched)" color="danger">
+      <div [hidden]="!form.controls.password.errors.required">
+      o campo é obrigatorio
+      </div>
+    </ion-item>
+
+  <div padding>
+    <button ion-button block  (click)="onSubmit()" (click)="presentLoading()" color="dark" type="submit" [disabled]="! form.valid" round>
+      Entrar
+    </button>
+  </div>
+  <button ion-button block color="dark" clear navPush="ForgotPasswordPage">Esqueci minha senha</button>
+  <button ion-button block color="dark" clear navPush="SignupPage">Criar conta</button>
+
+
+</Form>
+</ion-content>

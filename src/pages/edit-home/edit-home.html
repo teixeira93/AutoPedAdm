@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar color="danger">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Noticias</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+    <ion-content padding>
+    <form [formGroup]="form">
+      <ion-item>
+        <ion-label stacked>Titulo</ion-label>
+        <ion-input type="text" formControlName="titulohome" placeholder="Digite o titulo!"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+          <ion-label stacked>Descrição</ion-label>
+          <ion-input type="text" formControlName="descricaohome" placeholder="Digite sua descrição aqui!"></ion-input>
+        </ion-item>
+
+        <ion-item [hidden]="hasImg">
+          <ion-label class="form-control-label">Foto</ion-label>
+          <ion-input type="file" class="form-control" accept="image/png,image/jpeg" (change)="fileEvent($event)" formControlName="img"></ion-input>
+          <ion-item *ngIf="form.controls.img.invalid && (form.controls.img.dirty || form.controls.img.touched)" class="text-danger">
+            <div *ngIf="form.controls.img.errors.imgType">
+              Os formatos permitidos de imagem são: png e jpeg
+            </div>
+          </ion-item>
+        </ion-item>
+        <ion-item class="form-group" [hidden]="!hasImg">
+          <img src="{{ form.controls.imgUrl.value }}" class="img-thumbnail d-block" style="max-width: 100px;" [hidden]="!hasImg" />
+          <button class="btn btn-secondary mt-2" type="button" color="dark" (click)="removeImg()"><i class="fa fa-times" aria-hidden="true"></i>Adicionar Imagem</button>
+        </ion-item>
+
+
+      <ion-item>
+        <div padding>
+          <button ion-button block  type="submit" color="dark" (click)="onSubmit()" round>Salvar</button>
+        </div>
+      </ion-item>
+    </form>
+    </ion-content>

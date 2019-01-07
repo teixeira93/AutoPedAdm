@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="text-align: center;">Marcas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let marca of marcas | async">
+        <ion-item>
+          <br>
+          <h2 (click)="listProdutos(marca)">{{marca.nome}}</h2>
+
+        </ion-item>
+
+      <ion-item-options side="left">
+        <button ion-button color="secundary" (click)="editMarcas(marca)"><ion-icon name="create"></ion-icon>Editar</button>
+      </ion-item-options>
+
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="removeMarcas(marca.key)"><ion-icon name="trash"></ion-icon>Remover</button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab left bottom>
+    <button ion-fab color="danger" (click)="newMarcas()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+  <ion-fab right bottom>
+    <button ion-fab color="dark" (click)="newItemProdutos()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>
