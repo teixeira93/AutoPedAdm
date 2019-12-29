@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title style="text-align: center;">AutoPed</ion-title>
+    <ion-title style="text-align: center;">TechFit</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -13,25 +13,31 @@
 
     <ion-list>
         <ion-list-header style=" text-align: center; ">
-          Fique por dentro das melhores notícias.
+          Chega de mimimi e bora malhar!
         </ion-list-header>
-      </ion-list>
+    </ion-list>
 
-      <ion-card *ngFor="let home of homes | async">
-        <!-- <img src="../assets/imgs/rosto1.jpg"/> -->
-        <ion-card-content>
+        <ion-card-content *ngFor="let home of homes | async">
+          <ion-card >
+             <!-- <img src="../assets/imgs/rosto1.jpg"/> -->
 
-           <img src="{{home.imgUrl}}" alt="">
-           <ion-card-title>
-            {{home.titulo}}
-           </ion-card-title>
+           <img   src="{{home.imgUrl}}" alt=""> 
+
+           <div class="card-title">
+
+             <ion-card-title> {{home.titulo}} </ion-card-title>
+
+            </div>
+
            <p>
+
              {{home.descricao}}
+
            </p>
 
+           <button ion-button clear (click)="deletarHome(home.key)" >Excluir</button>
+          </ion-card>
         </ion-card-content>
-        <button ion-button clear (click)="deletarHome(home.key)" >Excluir</button>
-      </ion-card>
 
       <ion-fab right bottom>
           <button ion-fab color="dark" (click)="newItemHome()"><ion-icon name="add"></ion-icon></button>

@@ -9,7 +9,7 @@
 <ion-content padding>
   <Form [formGroup]="form">
       <ion-item>
-          <ion-label stacked>Nome</ion-label>
+          <ion-label stacked>Nome Completo:</ion-label>
           <ion-input type="text" formControlName="nome" placeholder="Digite seu Nome Completo!"></ion-input>
       </ion-item>
 
@@ -19,21 +19,11 @@
         </div>
       </ion-item>
 
-      <ion-list>
-          <ion-item>
-            <ion-label>Área de atuação</ion-label>
-
-            <ion-select>
-              <ion-option value="gerente">Gerente</ion-option>
-              <ion-option value="vr">Vend. Responsavel</ion-option>
-              <ion-option value="vendedor">Vendedor</ion-option>
-            </ion-select>
-          </ion-item>
-        </ion-list>
+        
 
 
       <ion-item>
-            <ion-label stacked>Data de nascimento</ion-label>
+            <ion-label stacked>Data de nascimento:</ion-label>
             <ion-datetime displayFormat="DD/MM/YYYY" formControlName="nascimento" placeholder="DD/MM/YYYY"></ion-datetime>
       </ion-item>
 
@@ -44,7 +34,7 @@
         </ion-item>
 
       <ion-item>
-        <ion-label stacked>E-mail</ion-label>
+        <ion-label stacked>E-mail:</ion-label>
         <ion-input type="email" formControlName="email" placeholder="@email.com"></ion-input>
       </ion-item>
 
@@ -55,7 +45,7 @@
         </ion-item>
 
       <ion-item>
-        <ion-label stacked>Senha</ion-label>
+        <ion-label stacked>Senha:</ion-label>
         <ion-input type="password" formControlName="password" placeholder="Digite sua Senha!"></ion-input>
       </ion-item>
 

@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.AutoPed" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="TechFit Adm" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>AutoPed</name>
     <description>An awesome Ionic/Cordova app.</description>
-    <author email="guilherme.teixeira@autohut.com.br" href="http://ionicframework.com/">Team Autohut</author>
+    <author email="guilherme@autohut.com.br" href="http://ionicframework.com/">Team Meio Kg</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -84,5 +84,4 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="onesignal-cordova-plugin" spec="2.4.4" />
     <allow-navigation href="http://192.168.0.109:8100" />
-    <engine name="android" spec="7.1.4" />
 </widget>

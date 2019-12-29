@@ -16,6 +16,7 @@ export class ProdutoPage {
   produtos: Observable<any[]>;
   categoria:any;
   form: any;
+  
 
   public isSearchbarOpened = false;
 
@@ -38,7 +39,7 @@ export class ProdutoPage {
     this.navCtrl.push('EditProdutosPage', { marcaKey: marca.key });
   }
 
-  removeItemProdutos(key: string, removeImg: boolean) {
+  removeItemProdutos(key:string, removeImg:boolean) {
     this.produtosProvider.remove(key, removeImg);
     this.toast.show('Produto removido com sucesso.');
   }

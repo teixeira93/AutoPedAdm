@@ -53,7 +53,10 @@ export class EditProdutosPage {
     this.form = this.formBuilder.group({
       key: [this.produtos.key],
       name: [this.produtos.name, Validators.required],
-      numero: [this.produtos.numero],
+      serie: [this.produtos.serie],
+      repeticao: [this.produtos.repeticao],
+      descanso: [this.produtos.descanso],
+      obs: [this.produtos.obs],
       // description: [this.produtos.description],
       // price: [this.produtos.price, Validators.required],
       categoryKey: [this.produtos.categoryKey, Validators.required],

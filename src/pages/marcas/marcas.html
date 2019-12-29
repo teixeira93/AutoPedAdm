@@ -3,13 +3,26 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title style="text-align: center;">Marcas</ion-title>
+    <ion-title style="text-align: center;">Categorias</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
+
+    <!-- <h6 style="text-align: center;"></h6>Escolha o treino de hoje</h6>
+    
+        <ion-list-header style=" text-align: center;">
+          Chega de mimimi e bora malhar!
+        </ion-list-header> -->
+    
+
+
   <ion-list>
+    <ion-title  style="text-align: center;">Escolha o treino de hoje</ion-title>
+      <ion-list-header style=" text-align: center;">
+          Qualquer duvida pergunte ao personal!
+        </ion-list-header>
 
     <ion-item-sliding *ngFor="let marca of marcas | async">
         <ion-item>

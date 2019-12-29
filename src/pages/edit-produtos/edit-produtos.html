@@ -9,6 +9,16 @@
 
 <ion-content padding>
   <form [formGroup]="form">
+
+      <ion-item>
+          <ion-label>Categorias</ion-label>
+          <ion-select formControlName="categoryKey" (ionChange)="getMarcas()" interface="popover">
+            <ion-option value="" [selected]="true">Selecione</ion-option>
+            <ion-option *ngFor="let marca of categories | async" [value]="marca.key">{{ marca.nome }}</ion-option>
+          </ion-select>
+      </ion-item>
+
+
       <ion-item>
           <ion-label stacked>Nome</ion-label>
           <ion-input type="text" formControlName="name"></ion-input>
@@ -21,25 +31,52 @@
       </ion-item>
 
       <ion-item>
-        <ion-label floating>Digite aqui a quantidade.</ion-label>
-        <ion-input type="number" formControlName="numero"></ion-input>
+        <ion-label stacked>Séries</ion-label>
+        <ion-input type="number" formControlName="serie"></ion-input>
       </ion-item>
-      <ion-item *ngIf="!form.controls.numero.valid && (form.controls.numero.dirty || form.controls.numero.touched)"
+      <ion-item *ngIf="!form.controls.serie.valid && (form.controls.serie.dirty || form.controls.serie.touched)"
           color="danger">
-          <div [hidden]="!form.controls.numero.errors.required">
+          <div [hidden]="!form.controls.serie.errors.required">
             O campo é obrigatório
           </div>
       </ion-item>
 
-
+      <ion-item>
+        <ion-label stacked>Repetições</ion-label>
+        <ion-input type="number" formControlName="repeticao"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.repeticao.valid && (form.controls.repeticao.dirty || form.controls.repeticao.touched)"
+          color="danger">
+          <div [hidden]="!form.controls.repeticao.errors.required">
+            O campo é obrigatório
+          </div>
+      </ion-item>
 
       <ion-item>
-          <ion-label>Categorias</ion-label>
-          <ion-select formControlName="categoryKey" (ionChange)="getMarcas()" interface="popover">
-            <ion-option value="" [selected]="true">Selecione</ion-option>
-            <ion-option *ngFor="let marca of categories | async" [value]="marca.key">{{ marca.nome }}</ion-option>
-          </ion-select>
+        <ion-label stacked>Descanso</ion-label>
+        <ion-input type="number" formControlName="descanso"></ion-input>
       </ion-item>
+      <ion-item *ngIf="!form.controls.descanso.valid && (form.controls.descanso.dirty || form.controls.descanso.touched)"
+          color="danger">
+          <div [hidden]="!form.controls.descanso.errors.required">
+            O campo é obrigatório
+          </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Obs:</ion-label>
+        <ion-input type="text" formControlName="obs"></ion-input>
+    </ion-item>obs
+    <ion-item *ngIf="!form.controls.obs.valid && (form.controls.obs.dirty || form.controlsobs.obs.touched)"
+        color="danger">
+        <div [hidden]="!form.controls.obs.errors.required">
+          O campo é obrigatório
+        </div>
+    </ion-item>
+
+
+
+      
 
 
     <!-- <ion-item>

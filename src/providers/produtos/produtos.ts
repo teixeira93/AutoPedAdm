@@ -39,7 +39,10 @@ export class ProdutosProvider {
   save(item: any, file: File) {
     const product = {
       name: item.name,
-      numero: item.numero,
+      serie: item.serie,
+      repeticao: item.repeticao,
+      descanso: item.descanso,
+      obs: item.obs,
       imgUrl: item.imgUrl,
       categoryKey: item.categoryKey,
       categoryName: item.categoryName

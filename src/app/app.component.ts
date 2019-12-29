@@ -26,9 +26,9 @@ export class MyApp {
 
                 this.pages = [
                   { icon: 'home', title: 'Pagina Inicial', component: HomePage },
-                  { icon: 'shirt', title: 'Marcas', component: 'MarcasPage' },
+                  { icon: 'shirt', title: 'Treinos', component: 'MarcasPage' },
                   // { icon: 'create', title: 'Pedido em andamento', component: 'PedidoPage' },
-                  { icon: 'list-box', title: 'Pedidos Feitos', component: 'PedidosFeitosPage'},
+                  // { icon: 'list-box', title: 'Pedidos Feitos', component: 'PedidosFeitosPage'},
                   { icon: 'attach', title: 'Sobre', component: 'SobrePage'}
 
                 ];
